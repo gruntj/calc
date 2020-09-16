@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>calculator</title>
+</head>
+<body>
+
+<style>
+	*{
+margin: 0;
+padding: 0;
+	}
+body{
+background:#010d17bd;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.Field{
+max-width: 320px;
+max-height: 620px;
+padding: 10px;
+margin-top: 50px;
+background: #c9dae9;
+box-shadow: 0 0 4px black;
+}
+.textField{
+background: #c9dae9;
+display: flex;
+justify-content: center;
+}
+.textarea {
+width: 100%;
+height: 88px;
+border: 0px solid #c9dae9;
+font-size: 26px;
+font-weight: bold;
+}
+	
+
+.firstBlock, .secondBlock, .thirdBlock, .fourthBlock, .fifthBlock{
+background: #c9dae9;
+display: flex;
+justify-content: center;
+}
+.button{
+    border: 0;
+    width: 33%;
+    height: 85px;
+    margin: 0.25%;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 19px;
+    font-weight: bold;
+}
+.button:hover{
+background: #b8b8b5;
+cursor: pointer;
+transition-duration: 1s;
+}
+.buttonEqually {
+width: 50%;
+background: #8dc1d7;
+}
+.buttonEqually:hover{
+background:#65add7;
+cursor: pointer;
+transition-duration: 1s;
+}
+
+
+/*{
+	    border: 0;
+    width: 33%;
+  
+}
+*/
+</style>
+
+<div class="Field">
+	<div class="textField">
+		<form name="form"><input type="text" name="text" class="textarea" placeholder="0" readonly value=""></form>
+	</div>
+	<div class="buttonField">
+		<div class="firstBlock">
+			<div class="button buttonAC" onclick="clean()" value ="button">AC</div>
+			<div class="button buttonDell" onclick="dell()">dell</div>
+			<div class="button buttonDiv" onclick="buttonClick('/')">/</div>
+		</div>
+
+		<div class="secondBlock">
+			<div class="button button7" onclick="buttonClick('7')">7</div>
+			<div class="button button8" onclick="buttonClick('8')">8</div>
+			<div class="button button9" onclick="buttonClick('9')">9</div>
+			<div class="button buttonMult" onclick="buttonClick('*')">*</div>
+		</div>
+
+		<div class="thirdBlock">
+			<div class="button button4" onclick="buttonClick('4')">4</div>
+			<div class="button button5" onclick="buttonClick('5')">5</div>
+			<div class="button button6" onclick="buttonClick('6')">6</div>
+			<div class="button buttonMinus" onclick="buttonClick('-')">-</div>
+		</div>
+
+		<div class="fourthBlock">
+			<div class="button button1" onclick="buttonClick('1')">1</div>
+			<div class="button button2" onclick="buttonClick('2')">2</div>
+			<div class="button button3" onclick="buttonClick('3')">3</div>
+			<div class="button buttonPlas" onclick="buttonClick('+')">+</div>
+		</div>
+
+		<div class="fifthBlock">
+		<div class="button buttonZerro" onclick="buttonClick('0')">0</div>
+		<div class="button buttonComma" onclick="buttonClick('.')">.</div>
+		<div class="button buttonEqually" onclick="equally('=')" >=</div>
+		</div>		
+	</div>
+
+
+</div>
+<!-- end html -->
+
+
+<!-- start script -->
+<script>
+	
+
+
+
+// 4. создать функцию которая будет производить вычисления и выводить результат в текстовое поле;
+// 5. создать функцию которая будет удалать символы  все символы из текстового поля;
+// 6. создать функцию, которя будет удалять из текстового поля данные по символьно;  
+
+function buttonClick(num) {
+var text = form.text.value = document.form.text.value+num;
+
+}
+
+function equally(){
+var sum = document.form.text.value;
+if (sum) {
+	document.form.text.value = eval(sum);
+}
+}
+
+
+
+function clean(){
+	document.form.text.value = "";
+}
+
+function dell(){
+var dell = document.form.text.value;
+document.form.text.value=dell.substring(0, dell.length-1);
+}
+
+</script>	
+</body>
+</html>
